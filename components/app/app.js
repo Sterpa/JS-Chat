@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-   // import
-   let Menu = window.Menu;
-   let Form = window.Form;
+    // import
+    let Menu = window.Menu;
+    let Form = window.Form;
 
     /**
      * Компонента "Форма"
@@ -40,6 +40,11 @@
             form.el.addEventListener('toChat', (event) => {
                 this.menu.addItem(event.detail);
                 this.uploadData();
+            });
+
+            document.body.querySelector('.pics').addEventListener('click', (event) => {
+                console.log('yes');
+                this.getBigPic();
             });
 
             this.loadData();
@@ -81,6 +86,23 @@
             };
 
             xhr.send(JSON.stringify(this.menu.data));
+        }
+
+        /**
+         * Open big picture
+         */
+        getBigPic() {
+            let pics = document.body.querySelectorAll('.map__img');
+            let target = pics[0];
+            for (let i = 0; i < pics.length; i++) {
+                let op = 0;
+                let st = getComputedStyle(pics[i]);
+                if (st.opacity > op) {
+                    op = st.opacity;
+                    target = pics[i];
+                }
+            }
+            window.open(target.src);
         }
     }
 

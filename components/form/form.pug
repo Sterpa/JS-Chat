@@ -1,0 +1,25 @@
+form.form__form
+    fieldset
+        input.form__input-date(
+            type='date'
+            name='day'
+            required='required'
+            value=dayNow
+        )
+        span &#160;
+        input.form__input-text(
+            type='text'
+            name='anchor'
+            required='required'
+            placeholder='время - дело'
+        )
+        span &#160;
+        input.form__input-url(
+            type="url"
+            name="href"
+            placeholder="https://music.yandex.ru/oldschool/"
+        )
+        span &#160;
+        button.form__button(
+            type="submit"
+        ) &#160;

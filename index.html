@@ -5,32 +5,40 @@
         <meta charset="utf-8" />
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
         <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="anime-styles.css">
         <link rel="stylesheet" href="components/app/app.css">
         <link rel="stylesheet" href="components/form/form.css">
         <link rel="stylesheet" href="components/menu/menu.css">
-        
     </head>
     <body>
-        <div class="baseLayer">
-            <div class="centerLayer">
-                <div class="js-app">v0.1
-                    <div class="js-form"></div>
-                    <div class="js-menu"></div>
+        <div class="centerLayer">
+            <div class="div0 js-app">
+                <div class="div1">
+                    <div class="div1_1">v0.3</div>
+                    <div class="div1_2 js-form"></div>
                 </div>
-                <div class="div-media-style">
-                    <img src="components/img/sb_01.jpg" title="Image 1" class="map__img img-style im-1">
-                    <img src="components/img/sb_02.jpg" title="Image 2" class="map__img img-style next im-2">
-                    <img src="components/img/sb_03.jpg" title="Image 3" class="map__img img-style next im-3">
-                    <img src="components/img/sb_04.jpg" title="Image 4" class="map__img img-style next im-4">
-                    <audio controls="controls" src="ttp2.mp3">
-                            <source src="ttp2.mp3" type="audio/mpeg">
-                    </audio>
+                <div class="div2">
+                    <div class="div2_1 js-menu"></div>
+                    <div class="div2_2">&#160;</div>
+                    <div class="div2_3">
+                        <div class="div2_3_1">&#160;</div>
+                        <div class="div2_3_2">
+                            <audio class="audio" autoplay="autoplay" controls="controls" src="data/ttp_end_theme.mp3">
+                                <source src="data/ttp_end_theme.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="pics div2_3_3">
+                            <img src="components/img/sb_01.jpg" title="Image 1" class="map__img img-style im-1">
+                            <img src="components/img/sb_02.jpg" title="Image 2" class="map__img img-style next im-2">
+                            <img src="components/img/sb_03.jpg" title="Image 3" class="map__img img-style next im-3">
+                            <img src="components/img/sb_04.jpg" title="Image 4" class="map__img img-style next im-4">
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
-
+        
+        <script src="components/form/form.pug.js"></script>
         <script src="components/form/form.js"></script>
 
         <script src="components/menu/menuItem.pug.js"></script>
@@ -38,13 +46,10 @@
         <script src="components/menu/menu.js"></script>
         <script src="components/app/app.js"></script>
         
-
         <script>
             "use strict";
             new window.App({el: document.querySelector('.js-app')});
         </script>
-
-
 
     </body>
 </html>

@@ -1,0 +1,28 @@
+{
+  "items" : [ {
+    "anchor" : "6 утра - Подъем",
+    "day" : "1957-10-04",
+    "href" : "https://vk.com"
+  }, {
+    "anchor" : "7 утра - Разгон облаков... Установление хорошей погоды",
+    "day" : "1957-10-04",
+    "href" : "https://fb.com"
+  }, {
+    "anchor" : "с 8 до 10 - Подвиг",
+    "day" : "1957-10-04",
+    "href" : "https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA-1"
+  }, {
+    "anchor" : "в 16:00 - война с Англией",
+    "day" : "1957-10-04",
+    "href" : "https://google.com"
+  }, {
+    "anchor" : "2:02 Заработало!",
+    "day" : "2017-09-05",
+    "href" : "https://duna2chat.firebaseio.com/menu/menu1808.json"
+  }, {
+    "anchor" : "5:40 Взошло на GitHub Pages",
+    "day" : "2017-09-05",
+    "href" : "https://sterpa.github.io/"
+  } ],
+  "title" : "Список дел в этой вселенной"
+}

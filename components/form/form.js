@@ -1,6 +1,8 @@
 (function() {
     'use strict';
 
+    const templateForm = window.formTemplate;
+
     /**
      * Компонента "Форма"
      */
@@ -21,40 +23,18 @@
          * Создаем HTML
          */
         render() {
-            this.el.innerHTML = `
-            <form class="form__form">
-                <fieldset>
-                    <input class="form__input-date"
-                        type="date"
-                        name="day"
-                        required="required"
-                        value="${this._getDateInFormat()}"/>
-                        
-                    <input class="form__input-text"
-                        type="text"
-                        name="anchor"
-                        required="required"
-                        placeholder="время - дело"/>
-
-                    <input class="form__input-url"
-                        type="url"
-                        name="href"
-                        placeholder="https://music.yandex.ru/oldschool/"/>
-
-                    <button class="form__button" type="submit">&#160</button>
-                </fieldset>
-            </form>`;
+            this.el.innerHTML = templateForm({dayNow: this._getDateInFormat()});
         }
 
         /**
-        * Развешиваем события 2
+        * Развешиваем события
         */
         _myInitEvents() {
             this.el.addEventListener('submit', this._myTrigger.bind(this));
         }
 
         /**
-        * Триггер 2
+        * Триггер
         * @param {Event} event
         */
         _myTrigger(event) {

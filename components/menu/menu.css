@@ -1,28 +1,62 @@
+.div2_1 {
+    display: inline-block;
+    width: 74%;
+}
+
+.div2_2 {
+    display: inline-block;
+    width: 54px;
+    vertical-align: top;
+}
+
+.div2_3 {
+    display: inline-block;
+    text-align: center;
+    width: 202px;
+    vertical-align: top;
+}
+
+.div2_3_1 {
+    min-height: 147px;
+}
+
+.audio {
+  width: 92%;
+}
+
+.map__img {
+  position: absolute;
+  bottom: 6%;
+  right: 1px;
+  width: 200px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .js-menu {
-  width: 74%;
-  margin-top: 20px;
+
 }
 
 .menu__title {
-  text-align: center;
+    text-align: center;
 }
 
 .menu__item {
-  text-align: right;
+    text-align: right;
 }
 
 .menu__link, .menu__day {
-  float: left;
+    float: left;
 }
 
 .menu__remove-button {
-  font-size: 110%;
-  color: darkred;
-  width: 24px;
-  height: 24px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding-right: 25px;
+    font-size: 110%;
+    color: darkred;
+    width: 24px;
+    height: 24px;
+    padding-right: 25px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
 }
 

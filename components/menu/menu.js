@@ -74,7 +74,7 @@
         }
 
         /**
-         * HTML одного объекта меню
+         * HTML одного объекта меню (не используется)
          * @param {Item} item
          * @param {number} index
          * @return {string}
@@ -140,4 +140,4 @@
 
     // Export
     window.Menu = Menu;
-})(window);
+})();
