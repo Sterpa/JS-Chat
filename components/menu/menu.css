@@ -1,0 +1,28 @@
+.js-menu {
+  width: 74%;
+  margin-top: 20px;
+}
+
+.menu__title {
+  text-align: center;
+}
+
+.menu__item {
+  text-align: right;
+}
+
+.menu__link, .menu__day {
+  float: left;
+}
+
+.menu__remove-button {
+  font-size: 110%;
+  color: darkred;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding-right: 25px;
+}
+

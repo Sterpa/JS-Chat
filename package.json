@@ -1,0 +1,33 @@
+{
+    "name": "components_1808_2130-1",
+    "version": "1.0.0",
+    "description": "JS_Chat",
+    "main": ".eslintrc.js",
+    "scripts": {
+        "lint": "./node_modules/.bin/eslint components/**/*.js",
+        "serve": "./node_modules/.bin/static-server .",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "pug": "pug components/{**/**,**}/*.pug --no-debug --client --name-after-file --extension=pug.js",
+        "pug1": "pug components/menu/menuItem.pug --no-debug --client --name-after-file --extension=pug.js",
+        "pug2": "pug components/menu/menu.pug --no-debug --client --name-after-file --extension=pug.js",
+        "pug3": "pug components --no-debug --client --name-after-file --extension=pug.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Sterpa/components_1808_2130-1.git"
+    },
+    "author": "Mikhail Belokoskov",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Sterpa/components_1808_2130-1/issues"
+    },
+    "homepage": "https://github.com/Sterpa/components_1808_2130-1#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "eslint": "^4.1.1",
+        "eslint-config-google": "^0.9.1",
+        "pug": "^2.0.0-rc.4",
+        "pug-cli": "^1.0.0-alpha6",
+        "static-server": "^2.0.5"
+    }
+}
