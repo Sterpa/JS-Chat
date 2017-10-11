@@ -71,7 +71,7 @@
             let index = parseInt(item.parentNode.dataset.index, 10);
             this.data.items.splice(index, 1);
             this.render();
-            console.log(this.data);
+
             let options = {
                 method: 'PUT',
                 body: JSON.stringify(this.data)};

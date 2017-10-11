@@ -72,9 +72,9 @@
         uploadData() {
             let options = {
                 method: 'PUT',
-                body: JSON.stringify(this.menu.data)};
+                body: JSON.stringify(this.menu.data.items)};
 
-            fetch('https://duna2chat.firebaseio.com/menu/menu1808.json', options)
+            fetch('https://duna2chat.firebaseio.com/menu/menu1808/items.json', options)
             .then((response) => {
                 return response.json();
             })
