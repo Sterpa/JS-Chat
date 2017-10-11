@@ -39,7 +39,7 @@
             // Обрабатываем всплывшее событие с form
             form.el.addEventListener('toChat', (event) => {
                 this.menu.addItem(event.detail);
-                this.uploadData2();
+                this.uploadData();
             });
 
             document.body.querySelector('.pics').addEventListener('click', (event) => {
@@ -47,36 +47,13 @@
                 this.getBigPic();
             });
 
-            this.loadData2();
-        }
-
-        /**
-         * Load data from server
-         */
-        loadData() {
-            const url = 'https://duna2chat.firebaseio.com/menu/menu1808.json';
-            const xhr = new XMLHttpRequest();
-
-            xhr.addEventListener('readystatechange', (event) => {
-                if (xhr.readyState === 4) {
-                    if (xhr.status !== 200) {
-                        console.error('Сетевая ошибка', xhr);
-                    } else {
-                        const resp = xhr.responseText;
-
-                        this.menu.setData(JSON.parse(resp));
-                    }
-                }
-            });
-
-            xhr.open('GET', url, true);
-            xhr.send();
+            this.loadData();
         }
 
         /**
          * Load data from server (fetch)
          */
-        loadData2() {
+        loadData() {
             fetch('https://duna2chat.firebaseio.com/menu/menu1808.json')
             .then((response) => {
                 return response.json();
@@ -92,7 +69,7 @@
         /**
          * Upload data to the server
          */
-        uploadData2() {
+        uploadData() {
             let options = {
                 method: 'PUT',
                 body: JSON.stringify(this.menu.data)};
@@ -104,22 +81,6 @@
             .catch(function(error) {
                 console.log('There has been a problem with your fetch operation: ' + error.message);
             });
-        }
-
-        /**
-         * Upload data to the server
-         */
-        uploadData() {
-            const url = 'https://duna2chat.firebaseio.com/menu/menu1808.json';
-            const xhr = new XMLHttpRequest();
-
-            xhr.open('PUT', url, true);
-
-            xhr.onload = (event) => {
-                console.log('DONE!');
-            };
-
-            xhr.send(JSON.stringify(this.menu.data));
         }
 
         /**
