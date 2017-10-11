@@ -39,7 +39,7 @@
             // Обрабатываем всплывшее событие с form
             form.el.addEventListener('toChat', (event) => {
                 this.menu.addItem(event.detail);
-                this.uploadData();
+                this.uploadData2();
             });
 
             document.body.querySelector('.pics').addEventListener('click', (event) => {
@@ -47,7 +47,7 @@
                 this.getBigPic();
             });
 
-            this.loadData();
+            this.loadData2();
         }
 
         /**
