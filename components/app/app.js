@@ -1,5 +1,5 @@
-// ES2015 Modules
-import {Menu} from './../menu/menu';
+(function() {
+    'use strict';
 
     // import
     let Menu = window.Menu;
@@ -142,4 +142,4 @@ import {Menu} from './../menu/menu';
 
     // export
     window.App = App;
-
+})();

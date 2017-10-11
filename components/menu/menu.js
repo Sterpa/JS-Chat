@@ -1,4 +1,5 @@
-
+(function() {
+    'use strict';
 
     const template = window.menuTemplate;
     const templateItem = window.menuitemTemplate;
@@ -14,7 +15,7 @@
     /**
      * Компонента "Меню"
      */
-export class Menu {
+    class Menu {
         /**
          * @constructor
          * @param  {Object} opts
@@ -150,4 +151,4 @@ export class Menu {
 
     // Export
     window.Menu = Menu;
-
+})();
