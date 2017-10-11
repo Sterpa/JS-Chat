@@ -1,5 +1,5 @@
-(function() {
-    'use strict';
+// ES2015 Modules
+import {Menu} from './../menu/menu';
 
     // import
     let Menu = window.Menu;
@@ -96,15 +96,15 @@
             let options = {
                 method: 'PUT',
                 body: JSON.stringify(this.menu.data)};
-            
+
             fetch('https://duna2chat.firebaseio.com/menu/menu1808.json', options)
             .then((response) => {
                 return response.json();
             })
             .catch(function(error) {
                 console.log('There has been a problem with your fetch operation: ' + error.message);
-        });
-    }
+            });
+        }
 
         /**
          * Upload data to the server
@@ -142,4 +142,4 @@
 
     // export
     window.App = App;
-})();
+

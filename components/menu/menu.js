@@ -1,5 +1,4 @@
-(function() {
-    'use strict';
+
 
     const template = window.menuTemplate;
     const templateItem = window.menuitemTemplate;
@@ -15,7 +14,7 @@
     /**
      * Компонента "Меню"
      */
-    class Menu {
+export class Menu {
         /**
          * @constructor
          * @param  {Object} opts
@@ -71,8 +70,17 @@
             let index = parseInt(item.parentNode.dataset.index, 10);
             this.data.items.splice(index, 1);
             this.render();
-            //console.log(this.data.items[index]);
-            
+            console.log(this.data);
+            let options = {
+                method: 'PUT',
+                body: JSON.stringify(this.data)};
+            fetch('https://duna2chat.firebaseio.com/menu/menu1808.json', options)
+            .then((response) => {
+                return response.json();
+            })
+            .catch(function(error) {
+                console.log('There has been a problem with your fetch operation: ' + error.message);
+            });
         }
 
         /**
@@ -142,4 +150,4 @@
 
     // Export
     window.Menu = Menu;
-})();
+
