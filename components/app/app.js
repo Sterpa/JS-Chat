@@ -4,6 +4,7 @@
     // import
     let Menu = window.Menu;
     let Form = window.Form;
+    //let Service = window.Service;
 
     /**
      * Компонента "Форма"
@@ -42,26 +43,15 @@
                 this.uploadData();
             });
 
-            document.body.querySelector('.pics').addEventListener('click', (event) => {
-                console.log('yes');
+            el.querySelector('.pics').addEventListener('click', (event) => {
                 this.getBigPic();
             });
 
-            this.loadData();
-        }
-
-        /**
-         * Load data from server (fetch)
-         */
-        loadData() {
-            fetch('https://duna2chat.firebaseio.com/menu/menu1808.json')
-            .then((response) => {
-                return response.json();
-            })
+            Service.getItems(this.menu.data)
             .then((resp) => {
-                this.menu.setData(resp);
+                this.menu.render();
             })
-            .catch(function(error) {
+            .catch((error) => {
                 console.log('There has been a problem with your fetch operation: ' + error.message);
             });
         }
