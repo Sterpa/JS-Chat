@@ -71,17 +71,6 @@
             let index = parseInt(item.parentNode.dataset.index, 10);
             this.data.items.splice(index, 1);
             this.render();
-
-            let options = {
-                method: 'PUT',
-                body: JSON.stringify(this.data)};
-            fetch('https://duna2chat.firebaseio.com/menu/menu1808.json', options)
-            .then((response) => {
-                return response.json();
-            })
-            .catch(function(error) {
-                console.log('There has been a problem with your fetch operation: ' + error.message);
-            });
         }
 
         /**
@@ -108,6 +97,7 @@
         */
         _onRemoveClick(item) {
             this.removeItem(item);
+            Service.putItems(this.data);
         }
 
         /**
@@ -123,7 +113,7 @@
         */
         _initEvents() {
             this.el.addEventListener('click', this._onClick.bind(this));
-        }
+        };
 
         /**
         * Клик в любую область меню
@@ -134,7 +124,6 @@
             // if (event.target.dataset.action != 'pick') event.preventDefault();
             event.preventDefault();
             let item = event.target;
-
             switch (item.dataset.action) {
             case 'remove':
                 this._onPickClick(item);

@@ -21,22 +21,18 @@ const BASE_URL = 'https://duna2chat.firebaseio.com/menu/menu1808.json';
                 return response.json();
             })
             .catch((error) => {
-                console.log('There has been a problem with your fetch operation: ' + error.message);
+                console.log('Error fetch(_makeRequest): ' + error.message);
             });
         }
 
         /**
          * Get collection
-         * @param {Object} links
          * @return {Promise<*>}
          */
-        static getItems(links) {
+        static getItems() {
             return this._makeRequest('GET', BASE_URL, undefined)
-            .then((resp) => {
-                links = resp;
-            })
             .catch((error) => {
-                console.log('There has been a problem with your fetch operation: ' + error.message);
+                console.log('Error fetch(getItems): ' + error.message);
             });
         }
 
@@ -48,7 +44,7 @@ const BASE_URL = 'https://duna2chat.firebaseio.com/menu/menu1808.json';
         static putItems(links) {
             return this._makeRequest('PUT', BASE_URL, links)
             .catch((error) => {
-                console.log('There has been a problem with your fetch operation: ' + error.message);
+                console.log('Error fetch(putItems): ' + error.message);
             });
         }
     }

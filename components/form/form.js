@@ -55,7 +55,8 @@
          */
         trigger(eventName, eventData) {
             let myEvent = new CustomEvent(eventName, {
-                detail: eventData
+                detail: eventData,
+                bubbles: true
             });
 
             this.el.dispatchEvent(myEvent);

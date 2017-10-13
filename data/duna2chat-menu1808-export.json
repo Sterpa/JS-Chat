@@ -23,6 +23,10 @@
     "anchor" : "5:40 Взошло на GitHub Pages",
     "day" : "2017-09-05",
     "href" : "https://sterpa.github.io/"
+  }, {
+    "anchor" : "17:19 add fetch()",
+    "day" : "2017-09-13",
+    "href" : "https://learn.javascript.ru/fetch"
   } ],
   "title" : "Список дел в этой вселенной"
 }

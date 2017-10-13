@@ -4,7 +4,7 @@
     // import
     let Menu = window.Menu;
     let Form = window.Form;
-    //let Service = window.Service;
+    let Service = window.Service;
 
     /**
      * Компонента "Форма"
@@ -15,6 +15,8 @@
          * @param {HTMLElement} param0.el
          */
         constructor({el}) {
+            this.el = el;
+
             this.menu = new Menu({
                 el: document.querySelector('.js-menu'),
                 data: {
@@ -32,44 +34,45 @@
                 }
             });
 
-            let form = new Form({
+            this.form = new Form({
                 el: el.querySelector('.js-form'),
                 data: {}
             });
 
-            // Обрабатываем всплывшее событие с form
-            form.el.addEventListener('toChat', (event) => {
+            // Обрабатываем всплывающее событие с form
+            this.el.addEventListener('toChat', (event) => {
                 this.menu.addItem(event.detail);
                 this.uploadData();
             });
 
-            el.querySelector('.pics').addEventListener('click', (event) => {
-                this.getBigPic();
-            });
+            // Обрабатываем click событие на слайдшоу
+            this.el.querySelector('.pics').addEventListener('click', this.getBigPic.bind(this));
 
-            Service.getItems(this.menu.data)
+            this.loadData();
+        }
+
+        /**
+         * Load data from server
+         * @return {Promise<*>}
+         */
+        loadData() {
+            return Service.getItems()
             .then((resp) => {
-                this.menu.render();
+                this.menu.setData(resp);
             })
             .catch((error) => {
-                console.log('There has been a problem with your fetch operation: ' + error.message);
+                console.log('Error fetch(loadData): ' + error.message);
             });
         }
 
         /**
          * Upload data to the server
+         * @return {Promise<*>}
          */
         uploadData() {
-            let options = {
-                method: 'PUT',
-                body: JSON.stringify(this.menu.data.items)};
-
-            fetch('https://duna2chat.firebaseio.com/menu/menu1808/items.json', options)
-            .then((response) => {
-                return response.json();
-            })
-            .catch(function(error) {
-                console.log('There has been a problem with your fetch operation: ' + error.message);
+            return Service.putItems(this.menu.data)
+            .catch((error) => {
+                console.log('Error fetch(uploadData): ' + error.message);
             });
         }
 
@@ -77,7 +80,7 @@
          * Open big picture
          */
         getBigPic() {
-            let pics = document.body.querySelectorAll('.map__img');
+            let pics = this.el.querySelectorAll('.map__img');
             let target = pics[0];
             for (let i = 0; i < pics.length; i++) {
                 let op = 0;

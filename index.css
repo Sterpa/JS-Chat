@@ -19,7 +19,7 @@ form, fieldset {
     min-height: 640px;
     margin: auto;
     position: relative;
-    background-image: url(components/img/maser_03_1024.png);
+    background-image: url(img/maser_03_1024.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
